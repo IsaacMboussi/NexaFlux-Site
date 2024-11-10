@@ -4589,6 +4589,41 @@ textarea.nexa-input {
     position: relative;
 }
 
+/* Post Category - Repositioned */
+.blog-post .post-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    color: rgba(0, 195, 255, 0.9);
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    border-radius: 20px;
+    background: rgba(16, 16, 24, 0.85); /* Semi-transparent background */
+    backdrop-filter: blur(4px); /* Blur effect for better readability */
+}
+
+/* Post Meta - Updated */
+.blog-post .post-meta {
+    display: flex;
+    justify-content: flex-end; /* Align date to the right */
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.post-meta-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.blog-post .post-date {
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+}
+
 .blog-post:hover {
     transform: translateY(-5px);
     border-color: rgba(0, 195, 255, 0.6);
@@ -4647,6 +4682,7 @@ textarea.nexa-input {
     align-items: center;
     margin-bottom: 1rem;
     font-size: 0.9rem;
+    gap: 1rem; /* Add space between category and date */
 }
 
 .blog-post .post-category {
@@ -4655,30 +4691,18 @@ textarea.nexa-input {
     padding: 0.3rem 0.8rem;
     border: 1px solid rgba(0, 195, 255, 0.3);
     border-radius: 20px;
+    white-space: nowrap; /* Prevents category from wrapping */
+}
+
+.post-meta-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Space between date and reading time */
 }
 
 .blog-post .post-date {
     color: rgba(255, 255, 255, 0.6);
-}
-
-/* Post Title */
-.blog-post h3 {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1rem;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-}
-
-.blog-post:hover h3 {
-    color: rgba(0, 195, 255, 0.9);
-}
-
-/* Post Excerpt */
-.blog-post p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    white-space: nowrap; /* Prevents date from wrapping */
 }
 
 /* Read More Link */
@@ -5305,4 +5329,196 @@ textarea.nexa-input {
     .contact-info li {
         justify-content: center;
     }
+}
+
+/* Search Input */
+.blog-search {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    background: rgba(16, 16, 24, 0.8);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.blog-search:focus {
+    outline: none;
+    border-color: rgba(0, 195, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.1);
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Image Loading Animation */
+.post-image img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post-image img.loaded {
+    opacity: 1;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.toast {
+    background: rgba(16, 16, 24, 0.95);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    margin: 0.5rem 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast.error {
+    border-color: rgba(255, 50, 50, 0.3);
+}
+
+/* Share Buttons */
+.share-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.share-buttons button {
+    background: transparent;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-buttons button:hover {
+    border-color: rgba(0, 195, 255, 0.8);
+    color: rgba(0, 195, 255, 1);
+    transform: translateY(-2px);
+}
+
+/* Reading Time */
+.reading-time {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Save Button */
+.save-button {
+    background: transparent;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.save-button:hover {
+    border-color: rgba(0, 195, 255, 0.8);
+    color: rgba(0, 195, 255, 1);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+}
+
+.theme-toggle {
+    background: rgba(16, 16, 24, 0.95);
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-options {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: rgba(16, 16, 24, 0.95);
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+.theme-switcher.active .theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.theme-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Theme Colors */
+.theme-option.cyberpunk-blue { background: rgba(0, 195, 255, 0.5); }
+.theme-option.cyberpunk-red { background: rgba(255, 50, 50, 0.5); }
+.theme-option.cyberpunk-green { background: rgba(50, 255, 100, 0.5); }
+
+/* Reading Time Styles */
+.reading-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;  /* Space between icon and text */
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.reading-time i {
+    color: rgba(0, 195, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* Featured Post Reading Time */
+.featured-post .reading-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.featured-post .reading-time i {
+    color: rgba(0, 195, 255, 0.9);
+    font-size: 0.9rem;
 }
